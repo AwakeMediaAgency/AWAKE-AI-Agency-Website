@@ -1,0 +1,8 @@
+{
+  "name": "AWAKE AI Agency",
+  "description": "A high-conversion agency landing page for AI automation services, featuring immersive animations, glassmorphism, and a custom discovery AI agent.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
