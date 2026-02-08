@@ -61,17 +61,17 @@ const DiscoveryAgent: React.FC = () => {
   };
 
   return (
-    <section className="py-32 px-4 bg-[#050505] relative overflow-hidden" id="ai-discovery">
+    <section className="py-32 px-4 bg-brand-dark relative overflow-hidden" id="ai-discovery">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1f75fe]/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
-      
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 glass rounded-full border border-[#1f75fe]/40 text-[10px] uppercase tracking-[0.3em] font-bold text-[#1f75fe]">
+          <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 glass rounded-full border border-brand-blue/40 text-[10px] uppercase tracking-[0.3em] font-bold text-brand-blue">
             <BrainCircuit className="w-4 h-4" /> AI Discovery Engine v3.1
           </div>
           <h3 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
-            Map Your <span className="text-brand italic underline decoration-[#1f75fe]/30">Bottlenecks</span>
+            Map Your <span className="text-brand italic underline decoration-brand-blue/30">Bottlenecks</span>
           </h3>
           <p className="text-neutral-500 text-xl font-light max-w-2xl mx-auto">
             Our discovery AI uses the "Scale-Killer" framework to calculate your friction cost in real-time.
@@ -83,33 +83,33 @@ const DiscoveryAgent: React.FC = () => {
           <div className="p-8 border-b border-white/5 flex items-center justify-between bg-white/[0.02]">
             <div className="flex items-center gap-4">
               <div className="relative">
-                <div className="w-14 h-14 rounded-2xl bg-[#1f75fe] flex items-center justify-center shadow-[0_0_20px_rgba(31,117,254,0.4)]">
+                <div className="w-14 h-14 rounded-2xl bg-brand-blue flex items-center justify-center shadow-[0_0_20px_rgba(31,117,254,0.4)]">
                   <Bot className="w-8 h-8 text-white" />
                 </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-4 border-[#0A0A0A] rounded-full"></div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-4 border-brand-dark rounded-full"></div>
               </div>
               <div>
                 <h4 className="font-black text-lg tracking-tight uppercase">Architect Volt</h4>
-                <p className="text-[10px] font-bold text-[#1f75fe] uppercase tracking-widest">Growth Logic Mode Enabled</p>
+                <p className="text-[10px] font-bold text-brand-blue uppercase tracking-widest">Growth Logic Mode Enabled</p>
               </div>
             </div>
             <div className="hidden sm:flex gap-2">
-               {[1,2,3].map(i => <div key={i} className="w-1 h-8 rounded-full bg-white/10"></div>)}
+              {[1, 2, 3].map(i => <div key={i} className="w-1 h-8 rounded-full bg-white/10"></div>)}
             </div>
           </div>
 
           {/* Messages */}
-          <div 
+          <div
             ref={scrollRef}
             className="flex-1 overflow-y-auto p-10 space-y-8 hide-scrollbar"
           >
             {messages.map((msg, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div className={`max-w-[75%] flex gap-5 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${msg.role === 'user' ? 'bg-white/5 border border-white/10' : 'bg-[#1f75fe] shadow-lg shadow-[#1f75fe]/20'}`}>
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${msg.role === 'user' ? 'bg-white/5 border border-white/10' : 'bg-brand-blue shadow-lg shadow-brand-blue/20'}`}>
                     {msg.role === 'user' ? <User className="w-5 h-5" /> : <Bot className="w-5 h-5" />}
                   </div>
                   <div className={`p-6 rounded-3xl text-base leading-relaxed ${msg.role === 'user' ? 'bg-white/10 text-white rounded-tr-none border border-white/5' : 'glass border border-white/10 text-neutral-200 rounded-tl-none'}`}>
@@ -121,7 +121,7 @@ const DiscoveryAgent: React.FC = () => {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="max-w-[75%] flex gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#1f75fe] flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center">
                     <Loader2 className="w-5 h-5 animate-spin" />
                   </div>
                   <div className="p-6 rounded-3xl glass border border-white/10 text-neutral-500 italic">
@@ -133,20 +133,20 @@ const DiscoveryAgent: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-8 bg-[#050505] border-t border-white/5">
+          <div className="p-8 bg-brand-dark border-t border-white/5">
             <div className="relative max-w-4xl mx-auto">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Ex: My team spends 10 hours a week on manual invoice typing..."
-                className="w-full bg-white/5 border-2 border-white/10 rounded-[24px] py-6 pl-8 pr-20 focus:outline-none focus:border-[#1f75fe] transition-all placeholder:text-neutral-600 font-medium"
+                className="w-full bg-white/5 border-2 border-white/10 rounded-[24px] py-6 pl-8 pr-20 focus:outline-none focus:border-brand-blue transition-all placeholder:text-neutral-600 font-medium"
               />
-              <button 
+              <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-4 bg-[#1f75fe] hover:bg-[#0151d0] rounded-2xl text-white disabled:opacity-50 transition-all active:scale-90 shadow-xl"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-4 bg-brand-blue hover:bg-[#0151d0] rounded-2xl text-white disabled:opacity-50 transition-all active:scale-90 shadow-xl"
               >
                 <Send className="w-5 h-5" />
               </button>

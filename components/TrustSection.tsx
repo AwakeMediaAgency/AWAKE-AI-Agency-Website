@@ -3,13 +3,13 @@ import { TRUST_SIGNALS } from '../constants';
 
 const TrustSection: React.FC = () => {
   return (
-    <section className="py-40 bg-[#02040a] relative overflow-hidden">
+    <section className="py-40 bg-brand-dark relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-20">
           <div className="flex-1">
-            <span className="inline-block text-[#1f75fe] font-bold tracking-[0.4em] uppercase mb-6 text-sm">Why Trust Us?</span>
+            <span className="inline-block text-brand-blue font-bold tracking-[0.4em] uppercase mb-6 text-sm">Why Trust Us?</span>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white uppercase italic leading-[0.9] mb-10">
               YOUR <span className="gradient-text">SAFETY</span> <br />
               IS THE NET.
@@ -30,7 +30,7 @@ const TrustSection: React.FC = () => {
 
           <div className="flex-1 grid grid-cols-1 gap-8">
             {TRUST_SIGNALS.map((signal, idx) => (
-              <div key={idx} className="p-10 glass rounded-[40px] border-white/5 hover:border-[#1f75fe]/30 transition-all duration-500 flex gap-8">
+              <div key={idx} className="p-10 glass rounded-[40px] border-white/5 hover:border-brand-blue/30 transition-all duration-500 flex gap-8">
                 <div className="flex-shrink-0">{signal.icon}</div>
                 <div>
                   <h4 className="text-3xl font-black mb-4 uppercase italic tracking-tighter">{signal.title}</h4>
